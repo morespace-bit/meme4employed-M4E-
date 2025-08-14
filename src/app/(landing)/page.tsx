@@ -1,5 +1,5 @@
-import Hero from "@/components/Hero";
-import Video from "@/components/Video";
+import Hero from "@/components/Landing/Hero";
+import Video from "@/components/Landing/Video";
 import { Feather } from "lucide-react";
 
 export default function About() {

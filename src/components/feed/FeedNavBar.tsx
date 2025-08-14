@@ -2,13 +2,13 @@
 
 import Link from "next/link";
 import { Feather } from "lucide-react";
+import { useView } from "@/lib/ViewContext";
 import { useState } from "react";
 
 export default function FeedNavBar() {
+  const { view, setView } = useView();
   const [isOpen, setIsOpen] = useState<boolean>(false);
-  const [view, setView] = useState<string>("foryou");
 
-  // Helper to apply active class
   const getMenuClass = (menu: string) =>
     `cursor-pointer px-2 py-1 rounded-xs ${
       view === menu
@@ -18,7 +18,7 @@ export default function FeedNavBar() {
 
   return (
     <header className="w-full py-15 px-8 flex flex-col justify-center items-center">
-      {/* main logo */}
+      {/* Logo */}
       <div className="font-cursive flex gap-1 justify-center items-center">
         <Feather color="green" size={50} />
         <span className="bg-green-300 text-3xl">MEMES4EMPLOYED</span>
@@ -30,8 +30,8 @@ export default function FeedNavBar() {
           <p className="font-heading text-2xl font-bold cursor-pointer">M4E</p>
         </Link>
 
-        {/* Nav menu */}
-        <div className="flex-row justify-evenly hidden md:flex w-full font-secondary text-[18px] font-semibold text-text">
+        {/* Desktop Menu */}
+        <div className="hidden md:flex flex-row justify-evenly w-full font-secondary text-[18px] font-semibold text-text">
           <p
             className={getMenuClass("foryou")}
             onClick={() => setView("foryou")}
@@ -44,20 +44,20 @@ export default function FeedNavBar() {
           >
             Trending
           </p>
-          <Link href={"/about"}>
-            <p
-              className={getMenuClass("topweek")}
-              onClick={() => setView("topweek")}
-            >
-              Top of the Week
-            </p>
-          </Link>
+
+          <p
+            className={getMenuClass("topweek")}
+            onClick={() => setView("topweek")}
+          >
+            Top of the Week
+          </p>
+
           <p className={getMenuClass("anime")} onClick={() => setView("anime")}>
             Anime Meme
           </p>
         </div>
 
-        {/* Hamburger */}
+        {/* Hamburger Button */}
         <button
           onClick={() => setIsOpen(!isOpen)}
           className="group h-8 w-8 rounded-lg flex items-center justify-center md:hidden"
@@ -81,6 +81,47 @@ export default function FeedNavBar() {
           </div>
         </button>
       </nav>
+
+      {/* Mobile Menu */}
+      {isOpen && (
+        <div className="flex flex-col w-full md:hidden mt-4 gap-2 bg-white rounded-lg p-4 shadow-lg">
+          <p
+            className={getMenuClass("foryou")}
+            onClick={() => {
+              setView("foryou");
+              setIsOpen(false);
+            }}
+          >
+            For You
+          </p>
+          <p
+            className={getMenuClass("trending")}
+            onClick={() => {
+              setView("trending");
+              setIsOpen(false);
+            }}
+          >
+            Trending
+          </p>
+
+          <p
+            className={getMenuClass("topweek")}
+            onClick={() => setIsOpen(false)}
+          >
+            Top of the Week
+          </p>
+
+          <p
+            className={getMenuClass("anime")}
+            onClick={() => {
+              setView("anime");
+              setIsOpen(false);
+            }}
+          >
+            Anime Meme
+          </p>
+        </div>
+      )}
     </header>
   );
 }

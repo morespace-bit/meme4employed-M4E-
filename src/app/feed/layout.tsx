@@ -1,4 +1,5 @@
 import FeedNavBar from "@/components/feed/FeedNavBar";
+import { ViewProvider } from "@/lib/ViewContext";
 
 export default function FeedLayout({
   children,
@@ -8,8 +9,10 @@ export default function FeedLayout({
   return (
     <>
       <body>
-        <FeedNavBar />
-        {children}
+        <ViewProvider>
+          <FeedNavBar />
+          {children}
+        </ViewProvider>
       </body>
     </>
   );

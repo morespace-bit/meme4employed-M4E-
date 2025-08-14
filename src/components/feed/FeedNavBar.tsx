@@ -17,7 +17,7 @@ export default function FeedNavBar() {
     }`;
 
   return (
-    <header className="w-full py-15 px-8 flex flex-col justify-center items-center">
+    <header className="w-full pt-15 px-8 flex flex-col justify-center items-center">
       {/* Logo */}
       <div className="font-cursive flex gap-1 justify-center items-center">
         <Feather color="green" size={50} />

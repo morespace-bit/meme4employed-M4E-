@@ -8,7 +8,7 @@ export default function NavBar() {
   return (
     <>
       <div className="flex w-full justify-center items-center sticky overflow-x-hidden">
-        <nav className="bg-white mx-4  my-4 px-5 py-5 rounded-xl flex justify-between items-center md:mx-80 md:py-4 md:justify-start md:gap-15 md:min-w-200  overflow-hidden w-full">
+        <nav className="bg-white mx-4  my-4 px-5 py-5 rounded-xl flex justify-between items-center md:mx-80 md:py-4 md:justify-start md:gap-15 md:min-w-200  overflow-hidden">
           {/* this is going to be logo */}
 
           <Link href={"/"}>

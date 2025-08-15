@@ -21,7 +21,9 @@ export default function FeedNavBar() {
       {/* Logo */}
       <div className="font-cursive flex gap-1 justify-center items-center">
         <Feather color="green" size={50} />
-        <span className="bg-green-300 text-3xl">MEMES4EMPLOYED</span>
+        <span className="bg-green-300 text-2xl md:text-3xl">
+          MEMES4EMPLOYED
+        </span>
       </div>
 
       <nav className="bg-white mx-4 my-8 px-5 py-5 rounded-xl flex justify-between items-center md:mx-80 md:py-4 md:justify-start md:gap-15 md:max-w-200 overflow-hidden w-full">

@@ -24,7 +24,7 @@ Aura farming moments can be especially humorous when the moment does NOT call fo
 export const Week: IMemePost = {
   heading: "Why Is Clippy Everywhere? ",
   imageUrl: "/img/clippy.webp",
-  shortDes: "",
+  shortDes: `This online trend started with people changing their profile pictures to Clippy, the former Microsoft Office mascot. Tech YouTuber Louis Rossmann, known for the "right to repair" movement, started the trend in a video titled "Change your profile picture to Clippy i'm serious". He argued that modern software and AI companies have become invasive, citing examples like scraping user edits for AI training. He contrasted this with Clippy, who was always helpful and never sold user data. Changing your profile picture to Clippy is a `,
   longDes: `
   This online trend started with people changing their profile pictures to Clippy, the former Microsoft Office mascot. Tech YouTuber Louis Rossmann, known for the "right to repair" movement, started the trend in a video titled "Change your profile picture to Clippy i'm serious". He argued that modern software and AI companies have become invasive, citing examples like scraping user edits for AI training. He contrasted this with Clippy, who was always helpful and never sold user data. Changing your profile picture to Clippy is a fun way to express frustration with the exploitative nature of technology. It's an easy way to participate and feel part of a larger movement. According to Rossmann, cultural change is the first step toward policy change.
   `,

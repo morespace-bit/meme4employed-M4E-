@@ -32,7 +32,7 @@ export default function MainCard({
         </div>
 
         <Link href={"/feed/context"}>
-          <div className={`px-2 `}>
+          <div className={` `}>
             <p className="font-heading flex gap-2 cursor-pointer mt-2 bg-green-300 w-38 rounded-xs text-xl">
               See full context{" "}
               <SquareArrowOutUpRight className="hover:scale-110 transition-all" />

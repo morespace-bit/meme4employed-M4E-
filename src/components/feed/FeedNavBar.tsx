@@ -34,12 +34,14 @@ export default function FeedNavBar() {
 
         {/* Desktop Menu */}
         <div className="hidden md:flex flex-row justify-evenly w-full font-secondary text-[18px] font-semibold text-text">
-          <p
-            className={getMenuClass("foryou")}
-            onClick={() => setView("foryou")}
-          >
-            For You
-          </p>
+          <Link href={"/feed"}>
+            <p
+              className={getMenuClass("foryou")}
+              onClick={() => setView("foryou")}
+            >
+              For You
+            </p>
+          </Link>
           <p
             className={getMenuClass("trending")}
             onClick={() => setView("trending")}
@@ -87,15 +89,17 @@ export default function FeedNavBar() {
       {/* Mobile Menu */}
       {isOpen && (
         <div className="flex flex-col w-full md:hidden mt-4 gap-2 bg-white rounded-lg p-4 shadow-lg">
-          <p
-            className={getMenuClass("foryou")}
-            onClick={() => {
-              setView("foryou");
-              setIsOpen(false);
-            }}
-          >
-            For You
-          </p>
+          <Link href={"/feed"}>
+            <p
+              className={getMenuClass("foryou")}
+              onClick={() => {
+                setView("foryou");
+                setIsOpen(false);
+              }}
+            >
+              For You
+            </p>
+          </Link>
           <p
             className={getMenuClass("trending")}
             onClick={() => {

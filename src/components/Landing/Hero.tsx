@@ -5,6 +5,13 @@ export default function () {
         <p className="font-primary text-xl font-bold captalize">
           Memes for Employed
         </p>
+        <div className="hidden md:block ">
+          <img
+            src="/img/meme.jpg"
+            alt=""
+            className="absolute top-10 right-40 z-2 w-120"
+          />
+        </div>
 
         <div className="text-6xl md:text-8xl mt-6  font-heading font-bold break-words ">
           <span>Are you</span>{" "}
@@ -12,7 +19,7 @@ export default function () {
             Employed?
           </span>
           <p>If you are good for you.</p>{" "}
-          <p>This just so happnes to be for you.</p>
+          <p className="z-10 relative">This just so happnes to be for you.</p>
           <span>M4E</span>
         </div>
 
@@ -30,14 +37,6 @@ export default function () {
           <p className=" absolute text-xl font-bold font-secondaryh top-3 left-8 group cursor-pointer ">
             Explore M4E
           </p>
-        </div>
-
-        <div className="hidden md:block">
-          <img
-            src="/img/meme.jpg"
-            alt=""
-            className="absolute top-10 right-40 z-[-1] w-120"
-          />
         </div>
       </div>
     </>

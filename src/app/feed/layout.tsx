@@ -8,12 +8,12 @@ export default function FeedLayout({
 }) {
   return (
     <>
-      <body>
+      <div>
         <ViewProvider>
           <FeedNavBar />
           {children}
         </ViewProvider>
-      </body>
+      </div>
     </>
   );
 }

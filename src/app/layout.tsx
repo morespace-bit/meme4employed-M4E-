@@ -24,10 +24,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[url('/img/bg.jpg')] bg-cover min-h-screen bg-center bg-neutral-200 bg-blend-darken overflow-x-hidden `}
-      >
-        {children}
+      <body className={`${geistSans.variable} ${geistMono.variable}  `}>
+        <div
+          className={`antialiased bg-[url("/img/bg.jpg")] bg-cover min-h-screen bg-center bg-neutral-200 bg-blend-darken overflow-x-hidden`}
+        >
+          {children}
+        </div>
       </body>
     </html>
   );

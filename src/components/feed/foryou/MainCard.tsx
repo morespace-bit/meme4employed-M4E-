@@ -4,9 +4,11 @@ import { SquareArrowOutUpRight } from "lucide-react";
 export default function MainCard({
   data,
   line,
+  type,
 }: {
   data: IMemePost | null;
   line: string;
+  type: string;
 }) {
   return (
     <>
@@ -31,7 +33,7 @@ export default function MainCard({
           <p>{data?.shortDesc}</p>
         </div>
 
-        <Link href={"/feed/context"}>
+        <Link href={`/feed/context/${type}`}>
           <div className={` `}>
             <p className="font-heading flex gap-2 cursor-pointer mt-2 bg-green-300 w-38 rounded-xs text-xl">
               See full context{" "}

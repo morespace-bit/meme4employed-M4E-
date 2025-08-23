@@ -74,7 +74,7 @@ export default function ForYou() {
           <p className="text-2xl font-primary flex items-center gap-2 bg-green-300 px-2">
             Hot right now <Flame size={30} color="green" />
           </p>
-          <MainCard data={hot} line=" " />
+          <MainCard data={hot} line=" " type="hot" />
         </div>
 
         {/* Best of week - smaller */}
@@ -82,7 +82,7 @@ export default function ForYou() {
           <p className="text-2xl font-primary flex items-center gap-2 bg-green-300 px-2">
             Best of week <Star size={30} color="green" />
           </p>
-          <MainCard data={top} line="line-clamp-3" />
+          <MainCard data={top} line="line-clamp-3" type="top" />
         </div>
 
         {/* The other meme you may want to know context */}

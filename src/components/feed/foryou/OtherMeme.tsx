@@ -1,4 +1,6 @@
 import { Hot } from "@/lib/data/dummyData";
+import Link from "next/link";
+
 import { SquareArrowOutUpRight } from "lucide-react";
 
 export default function OtherMeme({ data }: { data: IMemePost }) {
@@ -19,10 +21,12 @@ export default function OtherMeme({ data }: { data: IMemePost }) {
           <p className="line-clamp-2 font-secondary md:text-1xl md:line-clamp-3 text-xl">
             {data?.shortDesc}
           </p>
-          <p className="font-heading flex gap-2 cursor-pointer mt-2 bg-green-300 w-38 rounded-xs text-xl">
-            See full context{" "}
-            <SquareArrowOutUpRight className="hover:scale-110 transition-all" />
-          </p>
+          <Link href={`feed/context/${data?.id}`}>
+            <p className="font-heading flex gap-2 cursor-pointer mt-2 bg-green-300 w-38 rounded-xs text-xl">
+              See full context{" "}
+              <SquareArrowOutUpRight className="hover:scale-110 transition-all" />
+            </p>
+          </Link>
         </div>
       </div>
     </>

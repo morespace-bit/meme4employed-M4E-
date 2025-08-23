@@ -1,8 +1,12 @@
 "use client";
 
+import { useRouter } from "next/router";
+
 import { useEffect, useState } from "react";
 import MainCard from "@/components/feed/foryou/MainCard";
 import { Hot } from "@/lib/data/dummyData";
+import { doc, getDoc } from "firebase/firestore";
+import { db } from "@/lib/firebase/firebase_config";
 
 // TikTok embed component
 function TikTokEmbed({ url }: { url: string }) {
@@ -48,7 +52,35 @@ function TikTokEmbed({ url }: { url: string }) {
 }
 
 // Main page
-export default function ContextPage() {
+export default function ContextPage({ params }: { params: { id: string } }) {
+  const [data, setData] = useState<IMemePost | null>(null);
+
+  // function to get data
+  const { id } = params;
+  async function getData() {
+    if (!id) return;
+
+    if (id == "hot" || id == "top") {
+      if (id == "hot") {
+        let hotRef = doc(db, "Hot", "meme");
+        const res2 = await getDoc(hotRef);
+        setData(res2.data() as IMemePost);
+      } else {
+        let topRef = doc(db, "Top", "meme");
+        const res3 = await getDoc(topRef);
+        setData(res3.data() as IMemePost);
+      }
+    } else {
+      let generalRef = doc(db, "General Memes", id as string);
+      const res = await getDoc(generalRef);
+      setData(res.data() as IMemePost);
+    }
+  }
+
+  useEffect(() => {
+    getData();
+  }, []);
+
   return (
     <div className="w-full flex flex-col justify-center items-center px-4 md:px-90">
       <p className="text-2xl font-primary flex items-center gap-2 bg-green-300 px-2 justify-center rounded-sm">
@@ -58,17 +90,17 @@ export default function ContextPage() {
       {/* Main content */}
       <div className="mt-6 overflow-x-hidden w-full">
         <img
-          src={Hot.imageUrl}
+          src={data?.imageUrl}
           alt=""
           className="rounded-xl w-full h-64 md:h-96 object-cover"
         />
 
         <div className="w-full flex justify-center items-center mt-2 font-secondary text-2xl text-center">
-          <p>{Hot.heading}</p>
+          <p>{data?.heading}</p>
         </div>
 
         <div className="mt-3 font-secondary text-xl px-2 md:px-0 text-left">
-          <p>{Hot.longDesc}</p>
+          <p>{data?.longDesc}</p>
         </div>
       </div>
 
@@ -78,8 +110,8 @@ export default function ContextPage() {
       </p>
 
       <div className="mt-6 flex flex-col items-center gap-5 w-full md:w-2/3">
-        {Hot.video1 && <TikTokEmbed url={Hot.video1} />}
-        {Hot.video2 && <TikTokEmbed url={Hot.video2} />}
+        {data?.video1 && <TikTokEmbed url={data?.video1} />}
+        {data?.video2 && <TikTokEmbed url={data?.video2} />}
       </div>
     </div>
   );

@@ -1,4 +1,5 @@
 interface IMemePost {
+  id: string;
   heading: string;
   imageUrl: string;
   shortDesc: string;

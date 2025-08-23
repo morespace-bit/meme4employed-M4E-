@@ -1,8 +1,9 @@
 export const Hot: IMemePost = {
+  id: "1",
   heading: "Aura Farming in the internet and Anime Culture.",
   imageUrl: "/img/aura.jpg",
   shortDesc: `
-  Aura farming refers to a behavior (often in reference to an anime character) where a person basically does something for the sake of looking cool or “giving off presence.” “Aura” is also its own meme which basically means the quality that a person emanates their presence similar to how aura in anime describes an energy visibly emanating off characters. When someone with “aura” is in the room, you know it, and they’re the focus of attention. When a character with “aura” enters a scene, they dominate it. “Aura farming” is any action where someone is doing something that accumulates aura.   
+  Aura farming refers to a behavior (often in reference to an anime character) where a person basically does something for the sake of looking cool or “giving off presence.” “Aura” is also its own meme which basically means the quality that a person emanates their presence similar to how aura in anime describes an energy visibly emanating off characters. When someone with “aura” is in the room, you know it, and they’re the focus of attention. When a character with “aura” enters a scene, they dominate it. “Aura farming” is any action where someone is doing something that accumulates aura.
 
   `,
 
@@ -22,6 +23,7 @@ Aura farming moments can be especially humorous when the moment does NOT call fo
 };
 
 export const Week: IMemePost = {
+  id: "4",
   heading: "Why Is Clippy Everywhere? ",
   imageUrl: "/img/clippy.webp",
   shortDesc: `This online trend started with people changing their profile pictures to Clippy, the former Microsoft Office mascot. Tech YouTuber Louis Rossmann, known for the "right to repair" movement, started the trend in a video titled "Change your profile picture to Clippy i'm serious". He argued that modern software and AI companies have become invasive, citing examples like scraping user edits for AI training. He contrasted this with Clippy, who was always helpful and never sold user data. Changing your profile picture to Clippy is a `,

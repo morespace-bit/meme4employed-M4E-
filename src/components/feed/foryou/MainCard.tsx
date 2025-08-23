@@ -5,14 +5,14 @@ export default function MainCard({
   data,
   line,
 }: {
-  data: IMemePost;
+  data: IMemePost | null;
   line: string;
 }) {
   return (
     <>
       <div className="mt-6 overflow-x-hidden">
         <img
-          src={data.imageUrl}
+          src={data?.imageUrl}
           alt=""
           className="rounded-xl w-full h-90 md:h-120"
         />
@@ -20,7 +20,7 @@ export default function MainCard({
         {/* heading */}
 
         <div className="w-full flex justify-center items-center mt-2 font-secondaryh text-2xl text-center">
-          <p>{data.heading}</p>
+          <p>{data?.heading}</p>
         </div>
 
         {/* description  */}
@@ -28,7 +28,7 @@ export default function MainCard({
         <div
           className={`mt-3 font-secondary text-xl px-2 md:px-0 text-left ${line}`}
         >
-          <p>{data.shortDesc}</p>
+          <p>{data?.shortDesc}</p>
         </div>
 
         <Link href={"/feed/context"}>

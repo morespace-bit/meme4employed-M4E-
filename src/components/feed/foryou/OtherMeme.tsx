@@ -17,7 +17,7 @@ export default function OtherMeme() {
           </p>
 
           <p className="line-clamp-2 font-secondary md:text-1xl md:line-clamp-3 text-xl">
-            {Hot.shortDes}
+            {Hot.shortDesc}
           </p>
           <p className="font-heading flex gap-2 cursor-pointer mt-2 bg-green-300 w-38 rounded-xs text-xl">
             See full context{" "}

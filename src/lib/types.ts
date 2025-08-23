@@ -1,8 +1,8 @@
 interface IMemePost {
   heading: string;
   imageUrl: string;
-  shortDes: string;
-  longDes: string;
+  shortDesc: string;
+  longDesc: string;
   date: string;
   video1?: string;
   video2?: string;

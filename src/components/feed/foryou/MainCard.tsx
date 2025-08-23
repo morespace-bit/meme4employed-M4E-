@@ -28,7 +28,7 @@ export default function MainCard({
         <div
           className={`mt-3 font-secondary text-xl px-2 md:px-0 text-left ${line}`}
         >
-          <p>{data.shortDes}</p>
+          <p>{data.shortDesc}</p>
         </div>
 
         <Link href={"/feed/context"}>

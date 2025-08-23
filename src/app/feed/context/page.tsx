@@ -68,7 +68,7 @@ export default function ContextPage() {
         </div>
 
         <div className="mt-3 font-secondary text-xl px-2 md:px-0 text-left">
-          <p>{Hot.longDes}</p>
+          <p>{Hot.longDesc}</p>
         </div>
       </div>
 

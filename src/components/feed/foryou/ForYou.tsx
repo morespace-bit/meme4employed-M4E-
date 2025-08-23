@@ -5,8 +5,25 @@ import { BookHeart } from "lucide-react";
 import MainCard from "./MainCard";
 import { Hot, Week } from "@/lib/data/dummyData";
 import OtherMeme from "./OtherMeme";
+import { useState } from "react";
 
 export default function ForYou() {
+  const [general, setGeneral] = useState<IMemePost | null>(null);
+  const [hot, setHot] = useState<IMemePost | null>(null);
+  const [top, setTop] = useState<IMemePost | null>(null);
+
+  // function to get data form firebase
+
+  async function getMemes() {
+    // let postRef = collection(db, "Post");
+    // let q = query(postRef, orderBy("CreatedAt", "desc"), limit(5));
+    // let res = await getDocs(q);
+    // setLast(res.docs[res.docs.length - 1]);
+    // let data = res.docs.map((doc) => ({ ...doc.data(), id: doc.id }));
+    // setPost(data);
+    // setLoadmore(false);
+  }
+
   return (
     <div className="flex flex-col gap-20 mx-8 overflow-hidden">
       {/* two main part the hot right now and best of the week */}
